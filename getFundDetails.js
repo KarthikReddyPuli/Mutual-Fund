@@ -1,4 +1,5 @@
 const axios = require('axios');
+const { normalizeCompanyName } = require('./util')
 
 const investmentAmount = 18000
 
@@ -13,12 +14,13 @@ const getFundDetails = (fundId) => {
             resolve(response.data.data.map(item => {
                 percentValue = parseFloat(item[5])
                 return {
-                    "Company Name": item[1],
+                    "Company Name": normalizeCompanyName(item[1]),
                     "Percentage": percentValue,
                     "Amount": (investmentAmount * percentValue) / 100
                 }
             }));
         }).catch((error) => {
+            console.error("Failed to get fund details")
             reject(error);
         })
     })

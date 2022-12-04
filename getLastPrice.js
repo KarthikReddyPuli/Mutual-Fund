@@ -1,10 +1,9 @@
 const getLastPrice = (marketData, companySymbol) => {
-    marketData.data.forEach(element => {
-        if (element.metadata.symbol == companySymbol) {
-            console.log(element.metadata.lastPrice)
-            return element.metadata.lastPrice
+    for (var i = 0; i < marketData.data.length; i++) {
+        if (marketData.data[i].metadata.symbol == companySymbol) {
+            return marketData.data[i].metadata.lastPrice
         }
-    });
+    }
 }
 
 module.exports = getLastPrice

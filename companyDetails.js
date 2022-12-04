@@ -1,4 +1,5 @@
 const xlsx = require('xlsx');
+const { normalizeCompanyName } = require('./util')
 
 const getCompanyDetailsFromExcel = () => {
     const wb = xlsx.readFile("./companies/companyDetails.xlsx")
@@ -6,7 +7,7 @@ const getCompanyDetailsFromExcel = () => {
     const data = xlsx.utils.sheet_to_json(ws)
     var companyData = {}
     data.forEach(row => {
-        companyData[row["Company Name"]] = row["Symbol"]
+        companyData[normalizeCompanyName(row["Company Name"])] = row["Symbol"]
     })
     return companyData
 }
