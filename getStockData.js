@@ -3,6 +3,7 @@ const axios = require('axios');
 const url = `https://www.nseindia.com/api/market-data-pre-open?key=ALL`
 
 // Need to fix this axios request
+// Currently update this from https://www.nseindia.com/market-data/pre-open-market-cm-and-emerge-market
 const getMarketData = () => {
     return new Promise((resolve, reject) => {
         axios.get('https://www.nseindia.com/api/market-data-pre-open', {
