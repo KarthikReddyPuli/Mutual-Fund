@@ -14,7 +14,9 @@ Update companyDetails.xlsx if required
 
 ## Update Env
 Copy contents from .example.env
+
 Create a file .env
+
 Paste the contents in this file
 
 ## Run the program
