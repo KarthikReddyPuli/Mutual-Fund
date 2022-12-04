@@ -1,3 +1,5 @@
+require('dotenv').config()
+
 const getFundDetails = require('./getFundDetails');
 const getMarketData = require('./getStockData')
 const generateExcel = require('./generateExcel')
@@ -6,7 +8,7 @@ const updateStockCount = require('./updateStockCount')
 
 const main = async () => {
     const companyDetails = getCompanyDetailsFromExcel()
-    const [marketData, fundDetails] = await Promise.all([getMarketData(), getFundDetails("INF966L01614")])
+    const [marketData, fundDetails] = await Promise.all([getMarketData(), getFundDetails(process.env.MUTUALFUND_ID)])
     generateExcel(updateStockCount(companyDetails, marketData, fundDetails))
 }
 

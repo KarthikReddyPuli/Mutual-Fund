@@ -11,8 +11,11 @@ yarn add
 
 ## Update data
 Update companyDetails.xlsx if required
-Update investmentAmount in getFundDetails.js
-Update fund Id in index.js
+
+## Update Env
+Copy contents from .example.env
+Create a file .env
+Paste the contents in this file
 
 ## Run the program
 yarn dev

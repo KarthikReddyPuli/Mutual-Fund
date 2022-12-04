@@ -1,7 +1,7 @@
 const axios = require('axios');
 const { normalizeCompanyName } = require('./util')
 
-const investmentAmount = 18000
+const investmentAmount = parseFloat(process.env.INVESTMENT_AMOUNT)
 
 const getFundDetails = (fundId) => {
     const url = `https://staticassets.zerodha.com/coin/scheme-portfolio/${fundId}.json`;

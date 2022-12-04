@@ -19,6 +19,7 @@
   "homepage": "https://github.com/KarthikReddyPuli/Mutual-Fund#readme",
   "dependencies": {
     "axios": "^1.2.0",
+    "dotenv": "^16.0.3",
     "xlsx": "^0.18.5"
   }
 }
